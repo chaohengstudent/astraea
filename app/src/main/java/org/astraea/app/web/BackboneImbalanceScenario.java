@@ -491,7 +491,10 @@ public class BackboneImbalanceScenario implements Scenario<BackboneImbalanceScen
                   Arrays.stream(seriesString.split(","))
                       .map(Integer::parseInt)
                       .collect(Collectors.toUnmodifiableList()))
-          .orElse(List.of(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 5));
+          // if remove 192.168.103.184 have to change to 4
+          // because we have to use one machine to zipfian producer and
+          // one machine to zipfian consumer. so we have 6 - 2 = 4.
+          .orElse(List.of(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4));
     }
 
     List<Short> replicationFactor() {

@@ -48,7 +48,7 @@ public class BackboneImbalanceApplyTest {
       "192.168.103.177:25655,192.168.103.178:25655,192.168.103.179:25655,192.168.103.180:25655,192.168.103.181:25655,192.168.103.182:25655";
   public static final List<String> clients =
       List.of(
-          "192.168.103.184",
+          // "192.168.103.184",
           "192.168.103.142",
           "192.168.103.143",
           "192.168.103.144",
@@ -91,7 +91,7 @@ public class BackboneImbalanceApplyTest {
       // save result to json format
       var ansibleInventory = converter.toJson(toAnsibleInventory(result));
       var ansibleInventoryFile =
-          "/home/garyparrot/Programming/ansible/backbone-imbalance-scenario-inventory.json";
+          "/home/chaoheng/Downloads/balancer/ansible/backbone-imbalance-scenario-inventory.json";
       try (var stream = Files.newBufferedWriter(Path.of(ansibleInventoryFile))) {
         stream.write(ansibleInventory);
       } catch (IOException e) {
